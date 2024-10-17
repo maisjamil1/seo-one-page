@@ -294,21 +294,22 @@ export default ExampleUsage;
 ## API
 
 ### Props
+| Prop                                  | Type                                                                                                                                       | Default | Description                                               |
+|---------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|---------|-----------------------------------------------------------|
+| `lang` (optional)                     | `string`                                                                                                                                   | `'en'`  | Language code for localization.                           |
+| `eventSchedule`                       | `{ [key: string]: { value: string }[] }`                                                                                                   |         | The current event schedule.                               |
+| `setEventSchedule`                    | `React.Dispatch<React.SetStateAction<{ [key: string]: { value: string }[] }>>`                                                             |         | Function to update the event schedule.                    |
+| `onEventAdd` (optional)               | `(date: Date, dateKey: string) => void`                                                                                                    |         | Custom handler for adding events.                         |
+| `onEventDelete` (optional)            | `(eventData: { event: { value: string }; eventIndex: number; eventDate: Date; dateKey: string }) => void`                                  |         | Custom handler for deleting events.                       |
+| `renderEventChip` (optional)          | `({ event, eventIndex, eventDate }: { event: { value: string }; eventIndex: number; eventDate: Date }) => React.ReactNode`                 |         | Custom renderer for event chips.                          |
+| `containerClasses` (optional)         | `string`                                                                                                                                   |         | Custom CSS classes for the main container.                |
+| `calendarDayNameClasses` (optional)   | `string`                                                                                                                                   |         | Custom CSS classes for the day name headers.              |
+| `calendarDayClasses` (optional)       | `string`                                                                                                                                   |         | Custom CSS classes for each day cell in the calendar.     |
+| `dayNumberContainerClasses` (optional)| `string`                                                                                                                                   |         | Custom CSS classes for the day number container.          |
+| `dayNumberClasses` (optional)         | `string`                                                                                                                                   |         | Custom CSS classes for the day number itself.             |
+| `ChipsContainerClasses` (optional)    | `string`                                                                                                                                   |         | Custom CSS classes for the container holding event chips. |
+| `customAddIcon` (optional)            | `React.ReactNode`                                                                                                                          |         | Custom icon component for the add event button.           |
 
-| Prop                                   | Type                                                                                                                       | Default | Description                                               |
-| -------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | ------- | --------------------------------------------------------- |
-| `lang` (optional)                      | `string`                                                                                                                   | `'en'`  | Language code for localization.                           |
-| `eventSchedule`                        | `{ [key: string]: { value: string }[] }`                                                                                   |         | The current event schedule.                               |
-| `setEventSchedule`                     | `React.Dispatch<React.SetStateAction<{ [key: string]: { value: string }[] }>>`                                             |         | Function to update the event schedule.                    |
-| `onEventAdd` (optional)                | `(date: Date, dateKey: string) => void`                                                                                    |         | Custom handler for adding events.                         |
-| `onEventDelete` (optional)             | `(eventData: { event: { value: string }; eventIndex: number; eventDate: Date; dateKey: string }) => void`                  |         | Custom handler for deleting events.                       |
-| `renderEventChip` (optional)           | `({ event, eventIndex, eventDate }: { event: { value: string }; eventIndex: number; eventDate: Date }) => React.ReactNode` |         | Custom renderer for event chips.                          |
-| `containerClasses` (optional)          | `string`                                                                                                                   |         | Custom CSS classes for the main container.                |
-| `calendarDayNameClasses` (optional)    | `string`                                                                                                                   |         | Custom CSS classes for the day name headers.              |
-| `calendarDayClasses` (optional)        | `string`                                                                                                                   |         | Custom CSS classes for each day cell in the calendar.     |
-| `dayNumberContainerClasses` (optional) | `string`                                                                                                                   |         | Custom CSS classes for the day number container.          |
-| `dayNumberClasses` (optional)          | `string`                                                                                                                   |         | Custom CSS classes for the day number itself.             |
-| `ChipsContainerClasses` (optional)     | `string`                                                                                                                   |         | Custom CSS classes for the container holding event chips. |
 
 ## Author
 
